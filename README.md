@@ -1,1 +1,1 @@
-# investment-management
+# Investment management
