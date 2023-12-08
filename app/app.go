@@ -8,12 +8,13 @@ import (
 )
 
 func App() *fiber.App {
-	engine := html.New("web/templates", ".html")
+	engine := html.New("app/view/templates", ".html")
 
 	app := fiber.New(fiber.Config{
 		Views: engine,
 	})
 
+	// use default compress
 	app.Use(compress.New())
 
 	app.Static("/statics", "web/statics")
