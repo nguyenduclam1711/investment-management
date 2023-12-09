@@ -1,5 +1,5 @@
 package controlllerpage
 
-func Test(renderPage RenderPage) {
+func renderTestPage(renderPage renderPageFunc) {
 	renderPage("test", "test", nil)
 }

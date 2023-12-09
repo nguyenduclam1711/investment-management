@@ -1,6 +1,7 @@
 package app
 
 import (
+	"github.com/goccy/go-json"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/compress"
 	"github.com/gofiber/template/html/v2"
@@ -11,7 +12,9 @@ func App() *fiber.App {
 	engine := html.New("app/view/templates", ".html")
 
 	app := fiber.New(fiber.Config{
-		Views: engine,
+		Views:       engine,
+		JSONEncoder: json.Marshal,
+		JSONDecoder: json.Unmarshal,
 	})
 
 	// use default compress
@@ -20,7 +23,7 @@ func App() *fiber.App {
 	app.Static("/statics", "web/statics")
 
 	// controllers handler
-	controller.Handler(app)
+	controller.Main(app)
 
 	return app
 }
