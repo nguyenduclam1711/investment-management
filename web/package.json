@@ -3,6 +3,6 @@
     "tailwindcss": "^3.3.6"
   },
   "scripts": {
-    "build-tailwind": "npx tailwindcss -i ./statics/style/tailwind_input.css -o ./statics/style/main.css --minify"
+    "build-tailwind": "npx tailwindcss -i ./static/style/tailwind_input.css -o ./static/style/main.css --minify"
   }
 }
